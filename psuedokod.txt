@@ -1,0 +1,21 @@
+tanken är att jag gör ett interaktivt spel då jag kan välja svar och beroende på svaret får man olika aktiviteter på scenerna
+likt som en konversation
+
+If key pressed = a select choice A 
+If key pressed = d select choice D 
+^after konversations^
+
+if either choices pressed = new screen with diferent dialog(outcome)
+
+
+
+
+
+start skärmen ska börja med att person 2 (den du konverserar med) hälsar och ger dig ett uppdrag
+
+du ska svara på hans frågor och konverserar med honom
+
+----
+
+jag lägger till grafik så att det känns mer interaktivt mellan scenerna
+kanske även lägger till ljud om jag hinner innan deadlinen

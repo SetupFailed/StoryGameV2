@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "tZA69pX8eKfDzlSWek121k0I8IfbgUeZOxzGVXx4jkCR5BQ5u8D6/H8TpnfZ5N7JGAJwpeuxrZFLnIk4eRJZqg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\thomas.karlsson3\\Documents\\programmering\\StoryGameV2\\StoryGameV2\\StoryGameV2.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\thomas.karlsson3\\.nuget\\packages\\raylib-cs\\4.2.0.1\\raylib-cs.4.2.0.1.nupkg.sha512",
+    "C:\\Users\\thomas.karlsson3\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512"
+  ],
+  "logs": []
+}
