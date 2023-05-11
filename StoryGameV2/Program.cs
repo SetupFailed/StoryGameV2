@@ -73,11 +73,15 @@ void start()
     // codes for continue start screen
 
     float textX = Raylib.GetScreenWidth() / 2 - Raylib.MeasureText("Do you wish to continue on your quest?", 25) / 2;
+    float textOption = Raylib.GetScreenWidth() / 2 - Raylib.MeasureText("Press A or D to select an option then ENTER", 25) / 2;
     float textLeft = Raylib.GetScreenWidth() / 4 - Raylib.MeasureText("Continue", 25) / 2;
     float textRight = (Raylib.GetScreenWidth() / 4) * 3 - Raylib.MeasureText("Exit", 25) / 2;
-
+    
 
     Raylib.DrawText("Do you wish to continue on your quest?", (int)textX, heightY / 3, 25, Color.WHITE);
+    Raylib.DrawText("Press A or D to select an option then ENTER", (int)textOption, heightY - 50, 25, Color.WHITE);
+
+
     Raylib.DrawText("Continue", (int)textLeft, heightY - 310, 25, Color.WHITE);
     Raylib.DrawText("Exit", (int)textRight, heightY - 310, 25, Color.WHITE);
 
