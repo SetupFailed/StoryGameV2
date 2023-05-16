@@ -9,6 +9,16 @@ int widthX = 1200;
 
 string SelectedChoice = "";
 
+List<string> names = new List<string> { "Player", "Teal" };
+
+// Access the first name in the list
+string firstName = names[0];
+Console.WriteLine(firstName);
+
+// Access the second name in the list
+string secondName = names[1];
+Console.WriteLine(secondName);
+
 
 //----Audio----//
 
@@ -43,7 +53,12 @@ void draw()
 
     else if (gameScreen == 21)
     {
-        choice2A();
+        choice2A(heightY, secondName);
+    }
+
+    else if (gameScreen == 31)
+    {
+        choice3B();
     }
 
 }
@@ -76,7 +91,7 @@ void start()
     float textOption = Raylib.GetScreenWidth() / 2 - Raylib.MeasureText("Press A or D to select an option then ENTER", 25) / 2;
     float textLeft = Raylib.GetScreenWidth() / 4 - Raylib.MeasureText("Continue", 25) / 2;
     float textRight = (Raylib.GetScreenWidth() / 4) * 3 - Raylib.MeasureText("Exit", 25) / 2;
-    
+
 
     Raylib.DrawText("Do you wish to continue on your quest?", (int)textX, heightY / 3, 25, Color.WHITE);
     Raylib.DrawText("Press A or D to select an option then ENTER", (int)textOption, heightY - 50, 25, Color.WHITE);
@@ -110,8 +125,14 @@ void choice1A()
     // codes for choice 1:a
 
     float textX = Raylib.GetScreenWidth() / 2 - Raylib.MeasureText("Do not fret, I will not hurt you", 25) / 2;
+    float textLeft = Raylib.GetScreenWidth() / 4 - Raylib.MeasureText("Answer my question", 25) / 2;
+    float textRight = (Raylib.GetScreenWidth() / 4) * 3 - Raylib.MeasureText("i will bite my tongue if you try anything", 25) / 2;
 
     Raylib.DrawText("Do not fret, I will not hurt you", (int)textX, heightY / 3, 25, Color.WHITE);
+
+    Raylib.DrawText("Answer my question", (int)textLeft, heightY - 310, 25, Color.WHITE);
+
+    Raylib.DrawText("i will bite my tongue if you try anything", (int)textRight, heightY - 310, 25, Color.WHITE);
 }
 
 void choice1B()
@@ -123,26 +144,38 @@ void choice1B()
     Raylib.DrawText("Well then go, you fucking monkey!", (int)textX, heightY / 3, 25, Color.WHITE);
 }
 
-void choice2A()
+static void choice2A(int heightY, string name)
 {
     // codes for choice 2:a
 
-    float textX = Raylib.GetScreenWidth() / 2 - Raylib.MeasureText("You must have taken a great fall, I found you in a cave.", 25) / 2;
+    float textX = Raylib.GetScreenWidth() / 2 - Raylib.MeasureText($"If you truly must. My name is {name}", 25) / 2;
+
+    float textX1 = Raylib.GetScreenWidth() / 2 - Raylib.MeasureText("You must have taken a great fall, I found you in a cave.", 25) / 2;
 
     float textX2 = Raylib.GetScreenWidth() / 2 - Raylib.MeasureText("Your clothes were drenched in what seemed to be Orc blood.", 25) / 2;
 
     float textX3 = Raylib.GetScreenWidth() / 2 - Raylib.MeasureText("Sit down and drink this", 25) / 2;
 
-    Raylib.DrawText("You must have taken a great fall, I found you in a cave.", (int)textX, heightY / 3, 25, Color.WHITE);
+    Raylib.DrawText($"If you truly must. My name is {name}", (int)textX, heightY / 3, 25, Color.WHITE);
 
-    Raylib.DrawText("Your clothes were drenched in what seemed to be Orc blood.", (int)textX2, heightY / 3 + 25, 25, Color.WHITE);
+    Raylib.DrawText("You must have taken a great fall, I found you in a cave.", (int)textX1, heightY / 3 + 25, 25, Color.WHITE);
 
-    Raylib.DrawText("Sit down and drink this", (int)textX3, heightY / 3 + 50, 25, Color.WHITE);
+    Raylib.DrawText("Your clothes were drenched in what seemed to be Orc blood.", (int)textX2, heightY / 3 + 50, 25, Color.WHITE);
+
+    Raylib.DrawText("Sit down and drink this", (int)textX3, heightY / 3 + 75, 25, Color.WHITE);
 
 
-    //Your clothes were drenched in what seemed to be Orc blood. Sit down and drink this
+
 }
 
+void choice3B()
+{
+    float textX = Raylib.GetScreenWidth() / 2 - Raylib.MeasureText("You must have taken a great fall, I found you in a cave.", 25) / 2;
+
+    Raylib.DrawText("", (int)textX, heightY / 3, 25, Color.WHITE);
+
+
+}
 
 
 void characterL()
@@ -206,11 +239,11 @@ while (!Raylib.WindowShouldClose())
         choice1B();
     }
 
-    if (gameScreen == 11 && SelectedChoice == "a" && Raylib.IsKeyPressed(KeyboardKey.KEY_ENTER))
+    else if (gameScreen == 11 && SelectedChoice == "a" && Raylib.IsKeyPressed(KeyboardKey.KEY_ENTER))
     {
         gameScreen = 21;
 
-        choice2A();
+        choice2A(heightY, secondName);
     }
 
 
@@ -275,5 +308,9 @@ while (!Raylib.WindowShouldClose())
     }
 
     Raylib.EndDrawing();
+
 }
+
+
+
 
