@@ -13,7 +13,7 @@ if either choices pressed = new screen with diferent dialog(outcome)
 
 start skärmen ska börja med att person 2 (den du konverserar med) hälsar och ger dig ett uppdrag
 
-du ska svara på hans frågor och konverserar med honom
+du ska svara på hans frågor och konverser med honom
 
 ----
 
